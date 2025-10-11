@@ -1,0 +1,28 @@
+# Run all analyses, and output the time taken
+
+dir.create("output", showWarnings = FALSE)
+dir.create("output/processed_data", showWarnings = FALSE)
+dir.create("output/variables", showWarnings = FALSE)
+dir.create("output/plots", showWarnings = FALSE)
+
+files = c(
+  "1_main_archive1.R",
+  "2_main_archive2.R",
+  "3_survey.R",
+  "4_uses.R",
+  "5_heterogeneity_archive1.R"
+)
+
+log = "timings.csv"
+cat("script,elapsed_sec,status\n", file = log)
+
+for (f in files) {
+  status <- "success"
+  elapsed <- system.time(
+    tryCatch(
+      source(f),
+      error = function(e) { status <<- "error"; NULL }
+    )
+  )["elapsed"]
+  cat(sprintf("%s,%.3f,%s\n", f, elapsed, status), file = log, append = TRUE)
+}
