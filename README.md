@@ -31,9 +31,12 @@ All data used in our analysis is stored in the `data` directory:
 3. Generate all paper figures by running `00_run_all_analyses.R`
    - Results are saved in `output/plots/`
 
-### Performance Notes
+### Notes
 - Intermediate results are saved in `output/processed_data/` and loaded by default, so subsequent runs will be faster
+  - To run the analysis from scratch, you can delete this directory and they will be recreated.
+  - The analysis is _slightly stochastic_ due to sampling outcomes and conditions.
 - Analysis is computationally intensive due to running many replications and averaging results
-  - Takes approximately 2 hours on a 2024 MacBook Pro
+  - To generate all paper figures takes **approximately 4 hours** on a 2024 MacBook Pro
   - For faster execution: modify `config.R` and decrease `n_runs = 32` to e.g. `n_runs = 2`. Results will be similar but noisier
   - By default, `config.R` uses `future::plan("multisession", workers = n_workers)` to parallelize over cores. If you experience issues with this setup, we suggest changing this to use the future.callr package (`future::plan(future.callr::callr, workers = n_workers)`) or otherwise disabling parallelization altogether (`future::plan("sequential")`)
+  - By default, `config.R` sets `n_workers` to half of the computer's cores, but this can be changed.
