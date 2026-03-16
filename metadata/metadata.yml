@@ -1,0 +1,22 @@
+metadata_version: 1
+name: Predicting Results of Social Science Experiments Using Large Language Models
+description: |-
+  To evaluate whether large language models (LLMs) can be leveraged to predict the results of social science experiments, we built an archive of 70 pre-registered, nationally representative, survey experiments conducted in the United States, involving 469 experimental
+  effects and 119,330 participants. We prompted frontier, publicly-available, commercial and open-weight LLMs, to simulate how representative samples of Americans would respond to the stimuli from these experiments. Predictions derived from GPT-4-simulated responses correlate strikingly with actual treatment effects (r = 0.85), achieving predictive accuracy similar to
+  human forecasters, despite a systematic overestimation of effect sizes. This correlation remained high for unpublished studies that could not appear in the model’s training data (r = 0.90). In a secondary archive of 15 recent megastudies featuring an additional 606 treatment effects, GPT-4-derived predictions matched the accuracy of expert forecasters. We conducted an original survey of 460 social scientists, measuring likelihood of use of AI predictions for various scientific applications and concerns about risks, and then used our two archives to directly assess several prominent scientific applications (pilot testing, intervention selection, identifying effects needing replication) and risks (bias, misuse). Together, our results suggest LLMs can augment experimental methods in science and practice.
+authors:
+- name: Luke Hewitt
+  affiliations:
+  - name: Stanford University
+- name: Ashwini Ashokkumar
+  affiliations:
+  - name: Harvard University
+- name: Isaias Ghezae
+  affiliations:
+  - name: Harvard University
+- name: Robb Willer
+  affiliations:
+  - name: Stanford University
+corresponding_contributor:
+  name: Ashwini Ashokkumar
+  email: ashwiniashokkumar@g.harvard.edu
